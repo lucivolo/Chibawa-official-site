@@ -83,6 +83,148 @@ body{background:linear-gradient(180deg,var(--bg) 0,color-mix(in srgb,var(--pink)
 .cs{text-shadow:.03em .04em 0 var(--sky)}
 footer{background:linear-gradient(90deg,color-mix(in srgb,var(--pink) 30%,transparent),color-mix(in srgb,var(--butter) 30%,transparent),color-mix(in srgb,var(--mint) 30%,transparent),color-mix(in srgb,var(--sky) 30%,transparent),color-mix(in srgb,var(--lilac) 30%,transparent))}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== CHIBAWA: SOFT SPARKLY MAKEOVER ===== */
+
+:root {
+  --bg: #fffaff;
+  --bg2: #f2edff;
+  --navy: #7772b9;
+  --ink: #514b7c;
+  --muted: #9992bd;
+  --card: #ffffff;
+  --pink: #f8b9d5;
+  --sky: #c4e5ff;
+  --lilac: #d9ccff;
+  --mint: #c9efdf;
+}
+
+/* Softer overall background */
+body {
+  background: linear-gradient(
+    180deg,
+    #fffaff,
+    #faf5ff 45%,
+    #f3f3ff 100%
+  );
+}
+
+/* Cleaner navigation */
+.top nav a {
+  background: rgba(255,255,255,.8);
+  border: 1px solid #eee6ff;
+  transition: .25s ease;
+}
+
+.top nav a:hover {
+  background: #fce8f3;
+  transform: translateY(-2px);
+}
+
+/* Refined hero */
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, #ffe0ef 0, transparent 38%),
+    radial-gradient(circle at 85% 20%, #dceeff 0, transparent 40%),
+    radial-gradient(circle at 50% 90%, #e8deff 0, transparent 45%);
+}
+
+/* More delicate title */
+.logo {
+  -webkit-text-stroke: .085em var(--navy);
+  text-shadow:
+    0 3px 0 rgba(119,114,185,.25),
+    0 0 22px rgba(255,255,255,.9);
+}
+
+/* Less busy decorations */
+.hero .d,
+.soon .d {
+  opacity: .65;
+}
+
+.hero .cl,
+.soon .cl {
+  opacity: .25;
+}
+
+/* Subtle sparkle glow */
+svg.d use[href="#spark"],
+svg.d use[href="#star"] {
+  filter: drop-shadow(0 0 5px #fff);
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: .45;
+    filter: drop-shadow(0 0 2px #fff);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 9px #fff);
+  }
+}
+
+svg.d:has(use[href="#spark"]),
+svg.d:has(use[href="#star"]) {
+  animation:
+    float 6s ease-in-out infinite,
+    shimmer 2.5s ease-in-out infinite;
+}
+
+/* Cleaner portfolio container */
+#portfolio {
+  background: rgba(255,255,255,.78);
+  border: 2px solid #eee5ff;
+  border-radius: 32px;
+  box-shadow: 0 12px 40px rgba(150,130,200,.10);
+}
+
+/* Character image frames */
+.disc {
+  border: 5px solid white;
+  box-shadow: 0 5px 22px rgba(150,130,200,.16);
+}
+
+/* Softer character decorations */
+.orb::before {
+  opacity: .35;
+}
+
+.orb::after {
+  text-shadow: 0 0 8px white;
+}
+
+/* Cute but cleaner name labels */
+.name {
+  background: white;
+  border: 1px solid #f0e8ff;
+  box-shadow: 0 4px 12px rgba(150,130,200,.10);
+  border-radius: 18px;
+}
+
+/* Buttons */
+.btn {
+  background: linear-gradient(135deg, #ffc5df, #e3d4ff);
+  color: #65558e;
+  box-shadow: 0 4px 0 #dfb5d9;
+}
+
+/* Coming soon section */
+.soon {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #f1eaff,
+    #fff0f7
+  );
+}
+
+/* Footer */
+footer {
+  background: rgba(255,255,255,.65);
+}
+
 </style>
 </head>
 <body>
