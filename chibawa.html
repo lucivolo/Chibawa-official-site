@@ -58,12 +58,36 @@ footer svg{width:1em;color:var(--pink);fill:currentColor;vertical-align:-.1em}
 .ph{width:52%;height:auto;filter:drop-shadow(0 8px 0 color-mix(in srgb,var(--deep) 25%,transparent));animation:float 7s ease-in-out infinite}
 .ph.p1{transform:rotate(-5deg);margin-right:-4%;--r:-5deg}
 .ph.p2{transform:rotate(5deg);margin-left:-4%;--r:5deg;animation-delay:-3s}
-@media (min-width:900px){.duo{position:static;display:block;width:auto;margin:0}.duo .ph{position:absolute;width:clamp(240px,26vw,380px);margin:0;z-index:1}.duo .p1{right:3%;top:8%;--r:5deg}.duo .p2{left:3%;bottom:4%;--r:-5deg}}
-body{background:linear-gradient(180deg,var(--bg) 0,color-mix(in srgb,var(--pink) 16%,var(--bg)) 38%,color-mix(in srgb,var(--sky) 24%,var(--bg)) 68%,color-mix(in srgb,var(--lilac) 26%,var(--bg)) 100%)}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.75) 2.5px,transparent 3px) 0 0/30px 30px;opacity:.55;z-index:0}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:30px;background:radial-gradient(circle at 15px 30px,color-mix(in srgb,var(--pink) 45%,#fff) 15px,transparent 16px) 0 0/30px 30px repeat-x;z-index:0}
-.hero{background:radial-gradient(circle at 12% 18%,color-mix(in srgb,var(--pink) 55%,transparent),transparent 42%),radial-gradient(circle at 90% 26%,color-mix(in srgb,var(--sky) 65%,transparent),transparent 44%),radial-gradient(circle at 25% 90%,color-mix(in srgb,var(--mint) 60%,transparent),transparent 40%),radial-gradient(circle at 80% 92%,color-mix(in srgb,var(--lilac) 60%,transparent),transparent 42%),radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--butter) 40%,transparent),transparent 40%)}
-.cl{animation:drift 16s ease-in-out infinite alternate;opacity:.9}
+@media (min-width:900px) {
+  .duo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(100%, 680px);
+    margin: 1.6rem auto 0;
+  }
+
+  .duo .ph {
+    position: relative;
+    width: 52%;
+    max-width: 340px;
+    height: auto;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .duo .p1 {
+    margin-right: -4%;
+    --r: -5deg;
+  }
+
+  .duo .p2 {
+    margin-left: -4%;
+    --r: 5deg;
+    animation-delay: -3s;
+  }
+}
 @keyframes drift{from{transform:translateX(-14px)}to{transform:translateX(24px)}}
 .pill{box-shadow:0 5px 0 var(--pink),0 10px 0 color-mix(in srgb,var(--sky) 70%,transparent)}
 .ph.p1{filter:drop-shadow(0 7px 0 var(--pink)) drop-shadow(0 0 16px color-mix(in srgb,var(--lilac) 80%,transparent))}
